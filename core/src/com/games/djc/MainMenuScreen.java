@@ -22,8 +22,8 @@ public class MainMenuScreen extends ScreenAdapter {
     OrthographicCamera guiCam;
 
     Button playButton;
-    Button optionsButton;
-    Button highscoreButton;
+//    Button optionsButton;
+//    Button highscoreButton;
 
 
     public MainMenuScreen(DjcGameManager gameManager, SpriteBatch spriteBatch, ShapeRenderer shapeRenderer) {
@@ -36,8 +36,8 @@ public class MainMenuScreen extends ScreenAdapter {
         shapeRenderer.setAutoShapeType(true);
 
         playButton = new Button("Play", new Rectangle(Config.WIDTH / 2 - 50, Config.HEIGHT / 2 + 100, 100f, 50f), spriteBatch, shapeRenderer);
-        optionsButton = new Button("Options", new Rectangle(Config.WIDTH / 2 - 50, Config.HEIGHT / 2, 100f, 50f), spriteBatch, shapeRenderer);
-        highscoreButton = new Button("Highscore", new Rectangle(Config.WIDTH / 2 - 50, Config.HEIGHT / 2 - 100, 100f, 50f), spriteBatch, shapeRenderer);
+//        optionsButton = new Button("Options", new Rectangle(Config.WIDTH / 2 - 50, Config.HEIGHT / 2, 100f, 50f), spriteBatch, shapeRenderer);
+//        highscoreButton = new Button("Highscore", new Rectangle(Config.WIDTH / 2 - 50, Config.HEIGHT / 2 - 100, 100f, 50f), spriteBatch, shapeRenderer);
 
     }
 
@@ -47,10 +47,10 @@ public class MainMenuScreen extends ScreenAdapter {
             guiCam.unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
             if (playButton.getBounds().contains(touchPoint.x, touchPoint.y)) {
                 gameManager.setScreen(new GameScreen(gameManager, spriteBatch, shapeRenderer));
-            } else if (optionsButton.getBounds().contains(touchPoint.x, touchPoint.y)) {
-                gameManager.setScreen(new OptionsScreen(gameManager, shapeRenderer, spriteBatch));
-            } else if (highscoreButton.getBounds().contains(touchPoint.x, touchPoint.y)) {
-                gameManager.setScreen(new HighscoresScreen(gameManager, spriteBatch, shapeRenderer));
+//            } else if (optionsButton.getBounds().contains(touchPoint.x, touchPoint.y)) {
+//                gameManager.setScreen(new OptionsScreen(gameManager, shapeRenderer, spriteBatch));
+//            } else if (highscoreButton.getBounds().contains(touchPoint.x, touchPoint.y)) {
+//                gameManager.setScreen(new HighscoresScreen(gameManager, spriteBatch, shapeRenderer));
             }
         }
     }
@@ -61,8 +61,8 @@ public class MainMenuScreen extends ScreenAdapter {
         shapeRenderer.setProjectionMatrix(guiCam.combined);
         spriteBatch.setProjectionMatrix(guiCam.combined);
         playButton.draw();
-        optionsButton.draw();
-        highscoreButton.draw();
+//        optionsButton.draw();
+//        highscoreButton.draw();
 
     }
 
